@@ -18,18 +18,4 @@ export default createGlobalStyle`
     --color-blue: #0061ff;
     --color-border: #bdc4c9;
   }
-  button {
-   margin-top: 18px;
-
-    padding: 13px 18px;
-    font-size: 16px;
-    background-color: var(--color-blue);
-    color: var(--color-tertiary);
-    border: none;
-
-    cursor: pointer;
-    &:hover {
-      opacity: 0.87;
-    }
-  }
 `;

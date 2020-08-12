@@ -6,6 +6,11 @@ import {
   Header,
   DropboxLogo,
   Content,
+  BannerImage,
+  Buttons,
+  ContentBeige,
+  ContentInfo,
+  Links,
 } from './styles';
 
 interface Props {
@@ -30,15 +35,38 @@ const Section: React.FC<Props> = ({ variant, title, description }) => {
             <span>Dropbox</span>
           </h1>
 
-          <button onClick={handleToggle}>
+          <Links>
+            <a href='#'>For Teams</a>
+            <a href='#'>For Individuals</a>
+          </Links>
+
+          <Buttons onClick={handleToggle}>
             {buttonVariant === 0 ? 'Learn More' : 'Login'}
-          </button>
+          </Buttons>
         </Header>
       </HeaderWrapper>
 
       <Content>
-        <h2>{title}</h2>
-        <p>{description}</p>
+        {variant === 'beige' ? (
+          <ContentBeige>
+            <BannerImage>
+              <img
+                className='image'
+                src='https://cfl.dropboxstatic.com/static/images/index/zeus/home-hero-vflMv-jgR.jpg'
+                alt=''
+              />
+            </BannerImage>
+            <ContentInfo>
+              <h2>{title}</h2>
+              <p>{description}</p>
+            </ContentInfo>
+          </ContentBeige>
+        ) : (
+          <>
+            <h2>{title}</h2>
+            <p>{description}</p>
+          </>
+        )}
       </Content>
     </Container>
   );
